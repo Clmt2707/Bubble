@@ -9,3 +9,10 @@ bubble.classList.add('bubble');
 const size = Math.random() * 200 + 100 + "px";
 bubble.style.height = size;
 bubble.style.width = size;
+
+//Position aléatoire de la bulle/ apparition vers le bas de la page
+bubble.style.top = Math.random() * 100 + 50 + '%';
+bubble.style.left = Math.random() * 100 + '%';
+
+//Déplacement aléatoire
+bubble.style.setProperty('--left', Math.random() * 100 + '%');
