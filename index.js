@@ -1,3 +1,5 @@
+const counterDisplay = document.querySelector("h3");
+let counter = 0;
 
 
 const bubbleMaker = () => {
@@ -17,9 +19,24 @@ const bubbleMaker = () => {
     bubble.style.left = Math.random() * 100 + '%';
 
     //Déplacement aléatoire
-    bubble.style.setProperty('--left', Math.random() * 100 + '%');
+    //position de départ neg ou pos une fois sur deux
+    const plusMinus = Math.random() > 0.5 ? 1 : -1;
+    bubble.style.setProperty('--left', Math.random() * 100 + plusMinus + '%');
+
+    //Suppression des bulles au clic
+    bubble.addEventListener('click', () => {
+        counter++;
+        counterDisplay.textContent = counter;
+        bubble.remove();
+    });
+
+    //Suppression des bulles après l'animation
+    setTimeout(() => {
+        bubble.remove()
+    }, 8000);
+    
 };
 
-//création d'une bulle toutes les 2s
-/*setInterval(bubbleMaker, 300);*/
+//création d'une bulle toutes les 1s
+setInterval(bubbleMaker, 1000);
 

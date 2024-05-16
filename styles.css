@@ -21,3 +21,10 @@ body {
      filter: hue-rotate(720deg);
     }
 }
+
+h3 {
+    text-align: center;
+    color: gray;
+    margin-top: 20px;
+    font-size: 75px;
+}
